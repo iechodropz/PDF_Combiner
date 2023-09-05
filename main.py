@@ -21,6 +21,13 @@ def merge_pdfs():
 
         pdf_file.close()
 
+    merged_file_path = filedialog.asksaveasfilename(
+        defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")]
+    )
+
+    if not merged_file_path:
+        return
+
 
 root = tkinter.Tk()
 root.title("PDF Merger")
