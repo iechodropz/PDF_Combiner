@@ -28,6 +28,10 @@ def merge_pdfs():
     if not merged_file_path:
         return
 
+    merged_pdf = open(merged_file_path, "wb")
+    pdf_writer.write(merged_pdf)
+    merged_pdf.close()
+
 
 root = tkinter.Tk()
 root.title("PDF Merger")
