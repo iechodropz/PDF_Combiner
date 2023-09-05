@@ -9,6 +9,18 @@ def merge_pdfs():
     if not file_paths:
         return
 
+    pdf_writer = PyPDF2.PdfFileWriter()
+
+    for file_path in file_paths:
+        pdf_file = open(file_path, "rb")
+        pdf_reader = PyPDF2.PdfFileReader(pdf_file)
+
+        for page_num in range(pdf_reader.numPages):
+            page = pdf_reader.getPage(page_num)
+            pdf_writer.addPage(page)
+
+        pdf_file.close()
+
 
 root = tkinter.Tk()
 root.title("PDF Merger")
