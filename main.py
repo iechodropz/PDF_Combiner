@@ -15,7 +15,7 @@ def merge_pdfs():
         pdf_file = open(file_path, "rb")
         pdf_reader = PyPDF2.PdfReader(pdf_file)
 
-        for page_num in range(len(pdf_reader.Pages)):
+        for page_num in range(len(pdf_reader.pages)):
             page = pdf_reader.getPage(page_num)
             pdf_writer.addPage(page)
 
