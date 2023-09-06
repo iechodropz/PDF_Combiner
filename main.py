@@ -22,7 +22,9 @@ def merge_pdfs():
         pdf_file.close()
 
     merged_file_path = filedialog.asksaveasfilename(
-        defaultextension=".pdf", filetypes=[("PDF files", "*.pdf")]
+        defaultextension=".pdf",
+        filetypes=[("PDF files", "*.pdf")],
+        initialfile="Merged PDF Files.pdf",
     )
 
     if not merged_file_path:
@@ -36,7 +38,7 @@ def merge_pdfs():
 root = tkinter.Tk()
 root.title("PDF Merger")
 
-merge_button = tkinter.Button(root, text="Merge PDFs", command=merge_pdfs)
+merge_button = tkinter.Button(root, text="Select PDFs", command=merge_pdfs)
 merge_button.grid(row=0, column=0, padx=30, pady=30)
 
 # Center the button within the grid cell
